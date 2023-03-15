@@ -1,20 +1,19 @@
 import React,{useState} from 'react';
 
-export default function Add(props) {
-    // Adding a hook to get the input and stores it.
+export default function AddItem({setItems}) {
+
     const [input, setInput] = useState('');
     
-    // Function that add items to the list
-    const addItem = () => {
+    const onAddItem = () => {
         if (!input) return null;
-        props.setItems((prevItems) => {
+        setItems((prevItems) => {
             return [
-                ...prevItems, 
+                ...prevItems,
                 {
                     id: Math.floor(Math.random() * 10000),
                     item: input,
                     completed: false,
-                    edit: false
+                    isEditing: false
                 }
             ]
         })
@@ -30,7 +29,7 @@ export default function Add(props) {
             />
             <button
                 className="button add--button" 
-                onClick={addItem}
+                onClick={onAddItem}
             >
                 Add
             </button>

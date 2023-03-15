@@ -2,41 +2,43 @@ import React from 'react';
 import CheckBox from './CheckBox';
 import EditBox from './EditBox';
 import EditButton from './EditButton';
-import Delete from './Delete';
+import DeleteItem from './DeleteItem';
 
-export default function Items(props) {
+export default function Items({items, setItems}) {
 
     // Adding Items to the list.
-    const listItems = props.items.map((item) => {
+    const listItems = items.map((item) => {
         return (
-            <li className='list--item' key={item.id}>
-                <CheckBox 
-                    completed={item.completed} 
-                    id={item.id}
-                    setItems={props.setItems}
-                />
-
-                <div className='item--name'>{item.item}</div>
-                
-                {
-                    item.edit            
-                    ?
-                    <EditBox 
-                        setItems={props.setItems}
-                        id={item.id}
-                    />                
-                    :
-                    <EditButton 
-                        setItems={props.setItems}
-                        id={item.id}
+            <ul className='list' key={item.id}>
+                <li className='list--item' key={item.id}>
+                    <CheckBox 
+                        setItems={setItems}
+                        completed={item.completed} 
+                        itemId={item.id}
                     />
-                }
-                
-                <Delete 
-                    setItems={props.setItems}
-                    id={item.id}
-                />
-            </li>
+
+                    <div className='item--name'>{item.item}</div>
+                    
+                    {
+                        item.isEditing ? (
+                            <EditBox 
+                                setItems={setItems}
+                                itemId={item.id}
+                            />
+                        ) : (
+                            <EditButton 
+                                setItems={setItems}
+                                itemId={item.id}
+                            />
+                        )
+                    }
+                    
+                    <DeleteItem
+                        setItems={setItems}
+                        itemId={item.id}
+                    />
+                </li>
+            </ul>
         );
     });
 

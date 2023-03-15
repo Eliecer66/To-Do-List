@@ -1,14 +1,14 @@
 import React,{useState} from 'react';
 
-export default function EditBox(props) {
+export default function EditBox({setItems, itemId}) {
     // State that store the info to edit.
     const [newInput, setNewInput] = useState('');
     // function that edit the list element desired
-    const editItem = (id) => {
-        props.setItems((prevItems) => {
+    const editItem = () => {
+        setItems((prevItems) => {
             return prevItems.map((element) => {
-                if (element.id === id) {
-                    element.edit = !(element.edit);
+                if (element.id === itemId) {
+                    element.isEditing = !(element.isEditing);
                     element.item = newInput;
                 }
                 return element;
@@ -24,10 +24,10 @@ export default function EditBox(props) {
                 onChange={(event) => setNewInput(event.target.value)}
             />
             <button
-                className='button button--input--edit' 
-                onClick={() => editItem(props.id)}
+                className='button button--input--edit'
+                onClick={editItem}
                 >Change
-            </button>     
+            </button>
         </div>
     );
 }

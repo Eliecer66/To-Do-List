@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default function EditBox(props) {
+export default function EditButton({setItems, itemId}) {
     
-     const toggleState = ((id) => {
-         props.setItems((prevItems) => {
+     const toggleState = (() => {
+         setItems((prevItems) => {
             return prevItems.map((item) => {
-                if (item.id === id) {
-                    item.edit = true;
+                if (item.id === itemId) {
+                    item.isEditing = true;
                 }
                 return item;
             })
@@ -16,7 +16,7 @@ export default function EditBox(props) {
     return (
         <button 
             className="button edit--button"
-            onClick={() => toggleState(props.id)}
+            onClick={toggleState}
             >Edit
         </button>
     );

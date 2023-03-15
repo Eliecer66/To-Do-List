@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Items from './Items';
-import Add from './Add';
+import AddItem from './AddItem';
 
 // Parent component which is hosting the main state
 export default function ToDoList() {
@@ -12,7 +12,7 @@ export default function ToDoList() {
             <h1 className='header--section'>
                 To Do List
             </h1>
-            <Add
+            <AddItem
                 setItems={setItems}
             />
             <h2 className='list--title'>

@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function Checkbox(props) {
-    // Function that change the checkbox state
-    const changeCompleted = (id) => {
-        props.setItems((prevItem) => {
+export default function Checkbox({setItems, completed, itemId}) {
+
+    const changeCompleted = () => {
+        setItems((prevItem) => {
             return prevItem.map((item) => {
-                if (item.id === id) {
+                if (item.id === itemId) {
                     item.completed = !item.completed;
                 }
                 return item;
@@ -17,8 +17,8 @@ export default function Checkbox(props) {
         <input 
             className="checkbox--item" 
             type="checkbox" 
-            value={props.completed}
-            onChange={() => changeCompleted(props.id)}
+            value={completed}
+            onChange={changeCompleted}
         />
     );
 }
