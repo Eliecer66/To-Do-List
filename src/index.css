@@ -11,3 +11,119 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+  font-size: 15px;
+}
+
+.button {
+  border-radius: 6%;
+  padding: 8px;
+  font-weight: 700;
+  letter-spacing: .9px;
+  border-style: solid;
+  cursor: pointer;
+}
+
+/* To do list section styles  */
+
+.toDoList--container {
+  display: flex; 
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+/* Header section */
+.header--section {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px ridge #8080805e;
+  padding: 15px;
+  font-size: 2em;
+  color: #530053;
+}
+
+/* Add section */
+.add--section {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 10px;
+  align-items: center;
+}
+
+.add--input {
+  width: 44%;
+  border-style: none;
+  padding: 8px;
+  font-size: 1.5em;
+  background: #c0c0c059;
+}
+
+.add--button {
+  background-color: #530053ba;
+  padding: 6px;
+  border-style: groove;
+  font-size: 1.5em;
+  color: #fafafa;
+  border-color: #8c60601c;
+}
+
+/* List Items section */
+
+.list--title {
+  font-size: 2em;
+  border-top: 1px ridge #8080805e;
+  padding: 10px;
+  color: #530053;  
+}
+
+.list--items {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin-left: 25px;
+}
+
+.list--item {
+  color: #530053;
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
+  border-bottom: 1px ridge #8080805e;
+  align-items: center;
+}
+
+.checkbox--item {
+  color: #530053;
+  flex-basis: 2%;
+  height: 23px;
+}
+
+.item--name {
+  flex-basis: 55%;
+  font-size: 1.5em;
+}
+
+.edit--button {
+  background-color: #530053;
+  color: #fafafa;
+  flex-basis: 24%;
+  max-width: 70px;
+  margin-left: 19%;
+}
+
+.delete--button {
+  color: #530053;
+}
+
+.button--input--edit {
+  background-color: #530053;
+  color: #fafafa;
+  margin-left: 2px;
+}
+
+.edit--input {
+  padding: 6px;
+}
