@@ -28,7 +28,7 @@ export default function AddItem({setItems}) {
                 onChange={(event) => setInput(event.target.value)}
             />
             <button
-                className="button add--button" 
+                className="button add--button"
                 onClick={onAddItem}
             >
                 Add

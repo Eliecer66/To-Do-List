@@ -17,7 +17,8 @@ export default function EditButton({setItems, itemId}) {
         <button 
             className="button edit--button"
             onClick={toggleState}
-            >Edit
+            >
+                Edit
         </button>
     );
 }

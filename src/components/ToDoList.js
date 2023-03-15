@@ -19,7 +19,7 @@ export default function ToDoList() {
                 List
             </h2>
             <Items 
-                items={items} 
+                items={items}
                 setItems={setItems}
             />
         </div>

@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 
 export default function EditBox({setItems, itemId}) {
     // State that store the info to edit.
@@ -26,7 +26,8 @@ export default function EditBox({setItems, itemId}) {
             <button
                 className='button button--input--edit'
                 onClick={editItem}
-                >Change
+                >
+                    Change
             </button>
         </div>
     );
